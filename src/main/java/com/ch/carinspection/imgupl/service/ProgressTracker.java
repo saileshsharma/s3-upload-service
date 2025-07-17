@@ -12,6 +12,8 @@ public class ProgressTracker implements ProgressListener {
 
     private int partCount = 0;
 
+
+
     @Override
     public void progressChanged(ProgressEvent progressEvent) {
         if (progressEvent.getEventType() == ProgressEventType.) {
