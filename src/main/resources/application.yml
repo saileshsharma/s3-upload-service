@@ -1,0 +1,52 @@
+aws:
+  accessKeyId: AKIA5SPRSVULOL6IH5NI
+  secretAccessKey: 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
+  region: ap-southeast-1
+  s3:
+    bucket: iiacimages
+
+spring:
+  web:
+    resources:
+      static-locations: file:uploads/
+  datasource:
+    url: jdbc:postgresql://localhost:5432/CAR-INSPECTION-IMAGES
+    username: producer_user
+    password: PRODUCER_USER
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/your-org/your-config-repo
+          clone-on-start: true
+
+rabbitmq:
+  queue:
+    name: imageScanQueue
+
+server:
+  port: 8888
+
+debug: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+

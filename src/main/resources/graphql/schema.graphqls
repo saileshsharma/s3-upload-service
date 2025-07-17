@@ -1,0 +1,44 @@
+# Enum matching your ScanStatus Java enum
+enum ScanStatus {
+  PENDING
+  CLEAN
+  INFECTED
+  SCAN_FAILED
+}
+
+type Image {
+  id: ID!
+  imageName: String!
+  imageUrl: String!
+  sizeMb: Float
+  timestamp: String!      # ISO-8601 timestamp as String
+  contentType: String
+  approxNetworkCalls: Int
+  approxIops: Float
+  scanStatus: ScanStatus!
+}
+
+type Query {
+  # Get one image by ID
+  getImageById(id: ID!): Image
+
+  # Get all images (add pagination/filters as needed)
+  allImages: [Image!]!
+}
+
+type Mutation {
+  # Create a new image record
+  createImage(
+    imageName: String!,
+    imageUrl: String!,
+    sizeMb: Float,
+    timestamp: String!,
+    contentType: String,
+    approxNetworkCalls: Int,
+    approxIops: Float,
+    scanStatus: ScanStatus = PENDING
+  ): Image
+
+  # Update scan status of an image
+  updateScanStatus(id: ID!, scanStatus: ScanStatus!): Image
+}
