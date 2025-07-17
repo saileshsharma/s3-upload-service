@@ -1,6 +1,6 @@
 aws:
-  accessKeyId: 2222
-  secretAccessKey: 2222/zIHssBm7FmUDgMXBD0e
+  accessKeyId: 22
+  secretAccessKey: 22/22
   region: ap-southeast-1
   s3:
     bucket: iiacimages
@@ -29,7 +29,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/your-org/your-config-repo
+          uri: https://github.com/saileshsharma/s3-upload-service.git
           clone-on-start: true
 
 rabbitmq:
