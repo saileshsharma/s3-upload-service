@@ -119,7 +119,9 @@
       <scope>test</scope>
     </dependency>
 
-  </dependencies>
+
+
+  </dependencies>git
 
   <build>
     <plugins>

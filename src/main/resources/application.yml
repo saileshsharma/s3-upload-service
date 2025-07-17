@@ -1,18 +1,18 @@
 aws:
-  accessKeyId: AKIA5SPRSVULOL6IH5NI
-  secretAccessKey: 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
-  region: ap-southeast-1
+  accessKeyId: ${AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+  region: ${AWS_REGION}
   s3:
-    bucket: iiacimages
+    bucket: ${AWS_S3_BUCKET}
 
 spring:
   web:
     resources:
       static-locations: file:uploads/
   datasource:
-    url: jdbc:postgresql://localhost:5432/CAR-INSPECTION-IMAGES
-    username: producer_user
-    password: PRODUCER_USER
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:CAR-INSPECTION-IMAGES}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,10 +21,10 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
   cloud:
     config:
       server:
@@ -34,10 +34,10 @@ spring:
 
 rabbitmq:
   queue:
-    name: imageScanQueue
+    name: ${RABBITMQ_QUEUE_NAME:imageScanQueue}
 
 server:
-  port: 8888
+  port: ${SERVER_PORT:8888}
 
 debug: true
 
@@ -49,6 +49,3 @@ management:
   endpoint:
     health:
       show-details: always
-
-
-
