@@ -1,6 +1,6 @@
 aws:
-  accessKeyId: AKIA5SPRSVULOL6IH5NI
-  secretAccessKey: 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
+  accessKeyId: 2222
+  secretAccessKey: 2222/zIHssBm7FmUDgMXBD0e
   region: ap-southeast-1
   s3:
     bucket: iiacimages
