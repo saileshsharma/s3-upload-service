@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * Configures component scanning, JPA entity scanning, and repository scanning.
  * Enables Spring Cloud Config Server.
  */
-@SpringBootApplication(scanBasePackages = "com.ch.carinspection.imgupl")
+@SpringBootApplication(scanBasePackages = "com.ch.carinspection")
 @EntityScan("com.ch.carinspection.imgupl.model")
 @EnableJpaRepositories("com.ch.carinspection.imgupl.service.repository")
 @EnableConfigServer  // <-- Add this annotation to enable Config Server
