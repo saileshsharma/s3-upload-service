@@ -1,5 +1,6 @@
 package com.ch.carinspection.imgupl;
 
+import com.ch.carinspection.DotenvApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -18,6 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class CarInspectionApplication {
 
     public static void main(String[] args) {
+        DotenvApplication.init(); // <-- loads .env
         SpringApplication.run(CarInspectionApplication.class, args);
     }
 }
