@@ -2,7 +2,7 @@ package com.ch.carinspection;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-public class DotenvApplication {
+public class CarInspectionEnvApplication {
     public static void init() {
         Dotenv dotenv = Dotenv.configure()
                 .ignoreIfMissing()
